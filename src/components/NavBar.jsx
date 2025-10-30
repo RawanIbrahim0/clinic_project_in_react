@@ -11,18 +11,17 @@ const NavBar = () => {
 
     return (
         <nav className="flex w-full h-20  items-center justify-between">
-
+           
             <img src={Logo} alt="logo" className="w-[17%] pt-7"  />
 
             <div className="clip-left-wave w-[80%] h-20 flex items-center justify-between 
-    bg-[var(--robin-egg-blue)] rounded-bl-full shadow-md justify-self-end">
+    bg-[var(--persian-green)] rounded-bl-full shadow-md justify-self-end">
 
                 <ul className="flex-1 flex justify-start pl-20 items-center gap-10 text-white text-xl">
-                    <li className="hover:text-gray-100 cursor-pointer transition">Home</li>
-                    <li className="hover:text-gray-100 cursor-pointer transition">Doctors</li>
-                    <li className="hover:text-gray-100 cursor-pointer transition">Contact</li>
+                    <li className="hover:text-[var(--timberwolf)] hover:-translate-y-1 duration-300 font-medium cursor-pointer transition">Home</li>
+                    <li className="hover:text-[var(--timberwolf)] hover:-translate-y-1 duration-300 font-medium  cursor-pointer transition">Doctors</li>
+                    <li className="hover:text-[var(--timberwolf)] hover:-translate-y-1 duration-300 font-medium cursor-pointer transition">Contact</li>
                 </ul>
-
                 <div className="flex items-center gap-4 pr-5">
                     {/* حقل البحث */}
                     <div className="relative">
@@ -47,7 +46,7 @@ const NavBar = () => {
                         </svg>
                     </div>
 
-                    {/* أيقونة الثيم */}
+                
                     <button
                         // onClick={toggleTheme}
                         className="p-2 rounded-full hover:bg-white/20 transition"
@@ -56,7 +55,7 @@ const NavBar = () => {
                         <Sun className="text-white" size={20} />
                     </button>
 
-                    {/* أيقونة اللغة */}
+            
                     <button
                         // onClick={toggleLang}
                         className="p-2 rounded-full hover:bg-white/20 transition"
