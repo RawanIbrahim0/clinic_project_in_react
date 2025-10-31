@@ -1,8 +1,5 @@
 @import "tailwindcss";
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-   background-color: rgb(255, 255, 255);
-
 
 --black: #040404ff;
 --dark-green: #03312eff;
@@ -10,30 +7,27 @@
 --persian-green: #009f93ff; 
 --robin-egg-blue: #02c3bdff;
 --timberwolf: #d7d9ceff; 
+--bg-color:white;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
 }
 
 .theme-dark {
+ --bg-color:black;
  --black: #d7d9ceff;
---dark-green: #03312eff;
+--dark-green: #02c3bdff;
 --caribbean-current: #037171ff;
 --persian-green: #009f93ff; 
 --robin-egg-blue: #02c3bdff;
 --timberwolf: #040404ff; 
 }
-.water-drop {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle at 45% 50%, var(--persian-green), var(--caribbean-current));
-  border-radius: 60% 60% 30% 40% / 50% 77% 65% 60%;
-  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.15),
-              0 0 30px rgba(0, 150, 255, 0.25);
 
-  margin: 60px auto;
-  position: relative;
-  overflow: hidden;
+html {
+  transition: all 0.4s ease-in-out;
 }
 
-/* حركة الطفو الخفيفة */
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -42,6 +36,29 @@
     transform: translateY(-6px);
   }
 }
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+.float-animationShap {
+  animation: float 3s ease-in-out infinite;
+}
+
+html.theme-transition,
+html.theme-transition * {
+  transition: background-color 0.4s ease, color 0.4s ease,
+              border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
 
 
 
