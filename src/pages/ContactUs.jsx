@@ -57,7 +57,7 @@ const ContactUs = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="bg-[var(--timberwolf)]/90 backdrop-blur-sm rounded-2xl shadow-2xl
-           p-8 border border-amber-50/10">
+           p-8 border-4 border-amber-50/10">
             <h2 className="text-2xl font-bold text-[var(--black)] mb-6">
               {language === "en" ? "Send us a Message" : "أرسل لنا رسالة"}
             </h2>
@@ -79,7 +79,7 @@ const ContactUs = () => {
                         ? "Enter your full name"
                         : "أدخل اسمك الكامل"
                     }
-                    className="w-full p-4 rounded-xl bg-[#1e2749ff]/40 border border-amber-50/20
+                    className="w-full p-4 rounded-xl bg-[#616161]/40 border border-amber-50/20
                      text-amber-50 focus:outline-none focus:ring-2 focus:ring-[var(--caribbean-current)]
                       transition duration-300"
                   />
@@ -96,7 +96,7 @@ const ContactUs = () => {
                     onChange={handleInputChange}
                     required
                     placeholder="your@email.com"
-                    className="w-full p-4 rounded-xl bg-[#1e2749ff]/40 border border-amber-50/20
+                    className="w-full p-4 rounded-xl bg-[#616161]/40 border border-amber-50/20
                      text-amber-50 focus:outline-none focus:ring-2 focus:ring-[var(--caribbean-current)]
                       transition duration-300"
                   />
@@ -116,7 +116,7 @@ const ContactUs = () => {
                   placeholder={
                     language === "en" ? "Message subject" : "موضوع الرسالة"
                   }
-                  className="w-full p-4 rounded-xl bg-[#1e2749ff]/40 border border-amber-50/20
+                  className="w-full p-4 rounded-xl bg-[#616161]/40 border border-amber-50/20
                    text-amber-50 focus:outline-none focus:ring-2 focus:ring-[var(--caribbean-current)] 
                    transition duration-300"
                 />
@@ -137,7 +137,7 @@ const ContactUs = () => {
                       ? "Type your message here..."
                       : "اكتب رسالتك هنا..."
                   }
-                  className="w-full p-4 rounded-xl bg-[#1e2749ff]/40 border border-amber-50/20 text-amber-50 focus:outline-none focus:ring-2 focus:ring-[var(--caribbean-current)] transition duration-300 resize-none"
+                  className="w-full p-4 rounded-xl bg-[#616161]/40 border border-amber-50/20 text-amber-50 focus:outline-none focus:ring-2 focus:ring-[var(--caribbean-current)] transition duration-300 resize-none"
                 ></textarea>
               </div>
 
@@ -159,7 +159,8 @@ const ContactUs = () => {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="bg-[var(--timberwolf)]/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-amber-50/10">
+            <div className="bg-[var(--timberwolf)]/90 backdrop-blur-sm rounded-2xl shadow-2xl
+             p-8 border-4 border-amber-50/10">
               <h2 className="text-2xl font-bold text-[var(--black)] mb-6">
                 {language === "en" ? "Contact Information" : "معلومات الاتصال"}
               </h2>

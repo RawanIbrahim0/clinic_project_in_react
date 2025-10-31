@@ -8,6 +8,7 @@
 --robin-egg-blue: #02c3bdff;
 --timberwolf: #d7d9ceff; 
 --bg-color:white;
+--bg-input:#d7d9ceff;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: var(--bg-color);
@@ -21,6 +22,8 @@
 --persian-green: #009f93ff; 
 --robin-egg-blue: #02c3bdff;
 --timberwolf: #040404ff; 
+--bg-input:#d7d9ceff;
+
 }
 
 html {
