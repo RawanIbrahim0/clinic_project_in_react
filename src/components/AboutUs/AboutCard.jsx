@@ -30,7 +30,7 @@ const AboutCard = ({ title, description }) => {
         </ul>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default AboutCard;
+export default AboutCard

@@ -16,13 +16,17 @@ const Home = ({doctorRef}) => {
         window.scrollTo(0, 0)
     }, [])
 
- useEffect(() => {
-    if (location.state?.scrollToDoctors) {
-      setTimeout(() => {
-        doctorRef.current?.scrollIntoView({ behavior: "smooth" })
-      }, 300)
-    }
-  }, [location])
+useEffect(() => {
+  if (location.state?.scrollToDoctors) {
+    setTimeout(() => {
+      const element = doctorRef.current
+      if (element) {
+        const offset = element.getBoundingClientRect().top + window.scrollY - 100
+        window.scrollTo({ top: offset, behavior: "smooth" })
+      }
+    }, 300)
+  }
+}, [location])
 
   return (
    <div>

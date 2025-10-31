@@ -1,14 +1,14 @@
-import { useState, useContext } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useContext } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { useLanguage } from "../context/LanguageContext"
 
 const MakeAppointmentSection = ({ doctor }) => {
   const { language } = useLanguage()
 
-  const [selectedDate, setSelectedDate] = useState("");
-  const [selectedTime, setSelectedTime] = useState("");
+  const [selectedDate, setSelectedDate] = useState("")
+  const [selectedTime, setSelectedTime] = useState("")
   const [showForm, setShowForm] = useState(false);
-  const [userInfo, setUserInfo] = useState({ name: "", phone: "" });
+  const [userInfo, setUserInfo] = useState({ name: "", phone: "" })
 
   const handleConfirm = () => {
     if (!userInfo.name || !userInfo.phone) {
@@ -16,19 +16,19 @@ const MakeAppointmentSection = ({ doctor }) => {
         language === "en"
           ? "Please fill in your full name and phone number."
           : "يرجى إدخال الاسم الكامل ورقم الهاتف."
-      );
-      return;
+      )
+      return
     }
     alert(
       language === "en"
         ? `Appointment confirmed with ${doctor.name} on ${selectedDate} at ${selectedTime}\nName: ${userInfo.name}\nPhone: ${userInfo.phone}`
         : `تم حجز موعد مع ${doctor.name} بتاريخ ${selectedDate} في الساعة ${selectedTime}\nالاسم: ${userInfo.name}\nرقم الهاتف: ${userInfo.phone}`
-    );
-    setShowForm(false);
-    setSelectedDate("");
-    setSelectedTime("");
-    setUserInfo({ name: "", phone: "" });
-  };
+    )
+    setShowForm(false)
+    setSelectedDate("")
+    setSelectedTime("")
+    setUserInfo({ name: "", phone: "" })
+  }
 
   return (
     <section
@@ -154,7 +154,7 @@ const MakeAppointmentSection = ({ doctor }) => {
           )}
         </AnimatePresence>
 
-        {/* نموذج البيانات */}
+       
         <AnimatePresence>
           {showForm && (
             <motion.div

@@ -3,7 +3,7 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import { DataProvider } from "./context/DataContext"
-import { BrowserRouter as Router, Routes, Route } from 'react-router';
+import { BrowserRouter as Router, Routes, Route } from 'react-router'
 import OneDoctor from './pages/OneDoctor'
 import ContactUs from './pages/ContactUs'
 import { useRef } from "react"
@@ -13,7 +13,7 @@ import { LanguageProvider } from './context/LanguageContext'
 
 
 function App() {
-  const doctorRef = useRef(null);
+  const doctorRef = useRef(null)
 
   return (
     <>

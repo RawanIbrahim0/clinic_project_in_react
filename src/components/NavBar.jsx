@@ -25,54 +25,60 @@ const NavBar = ({ doctorRef }) => {
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, []);
+  }, [])
 
-  const scrollToDoctors = () => {
+ const scrollToDoctors = () => {
   if (window.location.pathname !== "/") {
     navigate("/", { state: { scrollToDoctors: true } })
   } else {
-    doctorRef?.current?.scrollIntoView({ behavior: "smooth" })
+    const element = doctorRef?.current
+    if (element) {
+      const offset = element.getBoundingClientRect().top + window.scrollY - 100 // التعويض عن النافبار
+      window.scrollTo({ top: offset, behavior: "smooth" })
+    }
   }
 }
 
 
+
   const handleSearch = (e) => {
     if (e.key === "Enter" && searchTerm.trim() !== "") {
-      const term = searchTerm.toLowerCase();
+      const term = searchTerm.toLowerCase()
 
       const foundByName = doctors.find((doc) =>
         doc.name.toLowerCase().includes(term)
-      );
+      )
 
       if (foundByName) {
         navigate("/doctor", { state: { doctor: foundByName } });
         setSearchTerm("");
-        return;
+        return
       }
 
       const foundBySpecialty = doctors.find((doc) =>
         doc.specialty.toLowerCase().includes(term)
-      );
+      )
 
       if (foundBySpecialty) {
-        navigate("/doctor", { state: { doctor: foundBySpecialty } });
-        setSearchTerm("");
-        return;
+        navigate("/doctor", { state: { doctor: foundBySpecialty } })
+        setSearchTerm("")
+        return
       }
 
       alert(
         language === "en"
           ? "No matching doctor or specialty found!"
           : "لم يتم العثور على طبيب أو تخصص مطابق!"
-      );
+      )
     }
-  };
+  }
 
   return (
     <nav
-      className={`fixed flex w-full h-20 items-center justify-between z-[1000] transition-all duration-500 
+      className={`fixed flex w-full h-20 items-center justify-between z-[1000] transition-all
+         duration-500 
         ${isScrolled
-          ? "backdrop-blur-md bg-white/30 shadow-md"
+          ? "backdrop-blur-md bg-white/30 shadow-xs"
           : "bg-transparent shadow-none"
         }`}
     >
@@ -140,7 +146,7 @@ const NavBar = ({ doctorRef }) => {
             </svg>
           </div>
 
-          {/* زر الثيم */}
+          {/* الثيم */}
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-white/20 transition"
@@ -152,7 +158,7 @@ const NavBar = ({ doctorRef }) => {
             )}
           </button>
 
-          {/* زر اللغة */}
+          {/* اللغة */}
           <button
             className="p-2 rounded-full hover:bg-white/20 transition"
             onClick={toggleLanguage}

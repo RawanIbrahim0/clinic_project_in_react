@@ -1,22 +1,22 @@
 import { useLocation } from "react-router"
-import { useEffect } from "react";
+import { useEffect } from "react"
 
 import back from "../assets/back.png"
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa"
 
-import MakeAppointmentSection from "../components/MakeAppointmentSection";
+import MakeAppointmentSection from "../components/MakeAppointmentSection"
 
 const OneDoctor = () => {
-    const location = useLocation();
-    const doctor = location.state?.doctor;
+    const location = useLocation()
+    const doctor = location.state?.doctor
 
     if (!doctor) {
-        return <p className="text-center pt-20">No doctor data found.</p>;
+        return <p className="text-center pt-20">No doctor data found.</p>
     }
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+        window.scrollTo(0, 0)
+    }, [])
 
 
     return (

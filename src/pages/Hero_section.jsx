@@ -13,7 +13,8 @@ const Hero_section = () => {
     >
       {/* النصوص */}
       <div
-        className={`items-start flex flex-col justify-center gap-5 h-[100vh] p-5 transition-all duration-500
+        className={`items-start flex flex-col justify-center gap-5 h-[100vh] p-5 transition-all 
+          duration-500
         `}
       >
         <h1 className="text-4xl font-bold text-[var(--dark-green)]">
@@ -54,7 +55,6 @@ const Hero_section = () => {
         </button>
       </div>
 
-      {/* الصورة + السلايدر */}
       <div className="relative h-[100vh] w-[30%] p-5">
         <div className="absolute inset-0 z-0">
           <img className="w-[99%] h-[80%]" src={back} alt="back" />

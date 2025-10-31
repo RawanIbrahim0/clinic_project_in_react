@@ -1,48 +1,48 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router"
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../context/LanguageContext"
 
 const ContactUs = () => {
-  const navigate = useNavigate();
-  const { language } = useLanguage();
+  const navigate = useNavigate()
+  const { language } = useLanguage()
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+    e.preventDefault()
+    setIsSubmitting(true)
 
     setTimeout(() => {
-      console.log("Message sent:", formData);
-      setIsSubmitting(false);
+      console.log("Message sent:", formData)
+      setIsSubmitting(false)
       alert(
         language === "en"
           ? "Thank you! Your message has been sent successfully and we'll get back to you soon."
           : "شكرًا لك! تم إرسال رسالتك بنجاح وسنعود للرد عليك قريبًا."
-      );
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 2000);
-  };
+      )
+      setFormData({ name: "", email: "", subject: "", message: "" })
+    }, 2000)
+  }
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div className="min-h-screen w-[100%] pt-25 relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header */}
+        
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-black mb-4">
             {language === "en" ? "Contact Us" : "اتصل بنا"}
@@ -56,7 +56,8 @@ const ContactUs = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-[var(--timberwolf)]/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-amber-50/10">
+          <div className="bg-[var(--timberwolf)]/90 backdrop-blur-sm rounded-2xl shadow-2xl
+           p-8 border border-amber-50/10">
             <h2 className="text-2xl font-bold text-[var(--black)] mb-6">
               {language === "en" ? "Send us a Message" : "أرسل لنا رسالة"}
             </h2>
@@ -78,7 +79,9 @@ const ContactUs = () => {
                         ? "Enter your full name"
                         : "أدخل اسمك الكامل"
                     }
-                    className="w-full p-4 rounded-xl bg-[#1e2749ff]/40 border border-amber-50/20 text-amber-50 focus:outline-none focus:ring-2 focus:ring-[var(--caribbean-current)] transition duration-300"
+                    className="w-full p-4 rounded-xl bg-[#1e2749ff]/40 border border-amber-50/20
+                     text-amber-50 focus:outline-none focus:ring-2 focus:ring-[var(--caribbean-current)]
+                      transition duration-300"
                   />
                 </div>
 
@@ -93,7 +96,9 @@ const ContactUs = () => {
                     onChange={handleInputChange}
                     required
                     placeholder="your@email.com"
-                    className="w-full p-4 rounded-xl bg-[#1e2749ff]/40 border border-amber-50/20 text-amber-50 focus:outline-none focus:ring-2 focus:ring-[var(--caribbean-current)] transition duration-300"
+                    className="w-full p-4 rounded-xl bg-[#1e2749ff]/40 border border-amber-50/20
+                     text-amber-50 focus:outline-none focus:ring-2 focus:ring-[var(--caribbean-current)]
+                      transition duration-300"
                   />
                 </div>
               </div>
@@ -111,7 +116,9 @@ const ContactUs = () => {
                   placeholder={
                     language === "en" ? "Message subject" : "موضوع الرسالة"
                   }
-                  className="w-full p-4 rounded-xl bg-[#1e2749ff]/40 border border-amber-50/20 text-amber-50 focus:outline-none focus:ring-2 focus:ring-[var(--caribbean-current)] transition duration-300"
+                  className="w-full p-4 rounded-xl bg-[#1e2749ff]/40 border border-amber-50/20
+                   text-amber-50 focus:outline-none focus:ring-2 focus:ring-[var(--caribbean-current)] 
+                   transition duration-300"
                 />
               </div>
 
@@ -244,7 +251,7 @@ const ContactUs = () => {
                   </div>
                 </div>
 
-                {/* Business Hours */}
+                {/* Hours */}
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
                     <svg
@@ -282,18 +289,19 @@ const ContactUs = () => {
           </div>
         </div>
 
-        {/* Back Button */}
         <div className="text-center mt-12">
           <button
             onClick={() => navigate("/")}
-            className="bg-transparent hover:bg-amber-50/10 text-amber-50 font-semibold py-3 px-8 rounded-xl border border-amber-50/30 transition duration-300 transform hover:scale-105"
+            className="bg-transparent hover:bg-amber-50/10 text-amber-50 font-semibold py-3
+             px-8 rounded-xl border border-amber-50/30 transition duration-300 transform 
+             hover:scale-105"
           >
             {language === "en" ? "Back to Home" : "العودة للرئيسية"}
           </button>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ContactUs;
+export default ContactUs

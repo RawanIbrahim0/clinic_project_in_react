@@ -86,7 +86,7 @@ const AppointmentSearch = () => {
   return (
     <div className="flex justify-center p-4 mb-25">
       <div className="bg-opacity-80 p-3 rounded-xl shadow-2xl flex flex-wrap justify-between space-x-2 sm:space-x-4 w-[100%] bg-[var(--caribbean-current)]">
-        {/* قسم */}
+      
         <div className="flex-1 min-w-[150px] mb-2 sm:mb-0">
           <Dropdown
             label={language === "en" ? "Select Department" : "اختر القسم"}
@@ -96,7 +96,7 @@ const AppointmentSearch = () => {
           />
         </div>
 
-        {/* طبيب */}
+        
         <div className="flex-1 min-w-[150px] mb-2 sm:mb-0">
           <Dropdown
             label={language === "en" ? "Select Doctor" : "اختر الطبيب"}
@@ -106,7 +106,7 @@ const AppointmentSearch = () => {
           />
         </div>
 
-        {/* تاريخ */}
+      
         <div className="flex-1 min-w-[150px] mb-2 sm:mb-0">
           <Dropdown
             label={language === "en" ? "Select Date" : "اختر التاريخ"}
@@ -116,7 +116,7 @@ const AppointmentSearch = () => {
           />
         </div>
 
-        {/* وقت */}
+      
         <div className="flex-1 min-w-[150px] mb-2 sm:mb-0">
           <Dropdown
             label={language === "en" ? "Select Time" : "اختر الوقت"}
@@ -126,7 +126,7 @@ const AppointmentSearch = () => {
           />
         </div>
 
-        {/* زر البحث */}
+       
         <button
           onClick={handleSearch}
           className="bg-white text-gray-700 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline flex items-center justify-center text-sm transition duration-150 ease-in-out min-w-[100px]"

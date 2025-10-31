@@ -1,7 +1,6 @@
-import { useContext } from "react";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
-import { AiOutlineYoutube } from "react-icons/ai";
-import QR from "../assets/QRcode.png";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa"
+import { AiOutlineYoutube } from "react-icons/ai"
+import QR from "../assets/QRcode.png"
 import { useLanguage } from "../context/LanguageContext"
 
 const Footer = () => {
@@ -10,17 +9,17 @@ const Footer = () => {
   const melodiesLinks =
     language === "en"
       ? ["Departments", "Services", "Contact"]
-      : ["الأقسام", "الخدمات", "اتصل بنا"];
+      : ["الأقسام", "الخدمات", "اتصل بنا"]
 
   const accessLinks =
     language === "en"
       ? ["Explore", "Doctors", "Appointment", "Department"]
-      : ["استكشف", "الأطباء", "احجز موعد", "الأقسام"];
+      : ["استكشف", "الأطباء", "احجز موعد", "الأقسام"]
 
   const contactLinks =
     language === "en"
       ? ["About", "Policy", "Support"]
-      : ["من نحن", "السياسة", "الدعم"];
+      : ["من نحن", "السياسة", "الدعم"]
 
   return (
     <footer
@@ -30,8 +29,7 @@ const Footer = () => {
       <div className="flex flex-col justify-center gap-3">
         <div className="flex justify-center">
           <div className="grid grid-cols-[1.3fr_1.3fr_1.3fr_1.3fr] gap-x-8 items-start w-full max-w-[1200px] px-4">
-            {/* Harmoni / Healix section */}
-            <div className={`col-span-1 ${language === "ar" ? "text-right" : "text-left"}`}>
+         <div className={`col-span-1 ${language === "ar" ? "text-right" : "text-left"}`}>
               <h4 className="text-2xl font-bold mb-3 text-[#03312eff]">
                 Healix
               </h4>
@@ -49,7 +47,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Access section */}
+          
             <div className={`col-span-1 ${language === "ar" ? "text-right" : "text-left"}`}>
               <h4 className="text-2xl font-bold mb-3 text-[#03312eff]">
                 {language === "en" ? "Access" : "الوصول"}
@@ -68,7 +66,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Contact section */}
+      
             <div className={`col-span-1 ${language === "ar" ? "text-right" : "text-left"}`}>
               <h4 className="text-2xl font-bold mb-3 text-[#03312eff]">
                 {language === "en" ? "Contact" : "تواصل"}
@@ -87,14 +85,14 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* QR Section */}
+           
             <div className="flex flex-col items-center justify-center w-[50%] h-[50%]">
               <img src={QR} alt="QR code" />
             </div>
           </div>
         </div>
 
-        {/* Footer bottom */}
+       
         <div
           className={`flex md:flex-row flex-col items-center justify-between px-10 text-sm text-[#afafaf] pt-8 border-t border-[#afafaf] ${
             language === "ar" ? "flex-row-reverse" : ""
@@ -144,7 +142,7 @@ const Footer = () => {
         }
       `}</style>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
