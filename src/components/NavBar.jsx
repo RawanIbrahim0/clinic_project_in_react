@@ -1,21 +1,40 @@
-import { useContext, useState } from "react";
-import { Sun, Moon, Globe } from "lucide-react";
-import Logo from "../assets/logo.png";
-import { useNavigate } from "react-router";
-import { DataContext } from "../context/DataContext";
-import { ThemeContext } from "../context/ThemeContext";
-import { useLanguage } from "../context/LanguageContext";
+import { useContext, useState, useEffect } from "react"
+import { Sun, Moon, Globe } from "lucide-react"
+import Logo from "../assets/logo.png"
+import { useNavigate } from "react-router"
+import { DataContext } from "../context/DataContext"
+import { ThemeContext } from "../context/ThemeContext"
+import { useLanguage } from "../context/LanguageContext"
 
 const NavBar = ({ doctorRef }) => {
-  const navigate = useNavigate();
-  const { doctors } = useContext(DataContext);
-  const { theme, toggleTheme } = useContext(ThemeContext);
-  const { language, toggleLanguage } = useLanguage();
-  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate()
+  const { doctors } = useContext(DataContext)
+  const { theme, toggleTheme } = useContext(ThemeContext)
+  const { language, toggleLanguage } = useLanguage()
+  const [searchTerm, setSearchTerm] = useState("")
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 30) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, []);
 
   const scrollToDoctors = () => {
-    doctorRef?.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  if (window.location.pathname !== "/") {
+    navigate("/", { state: { scrollToDoctors: true } })
+  } else {
+    doctorRef?.current?.scrollIntoView({ behavior: "smooth" })
+  }
+}
+
 
   const handleSearch = (e) => {
     if (e.key === "Enter" && searchTerm.trim() !== "") {
@@ -50,32 +69,38 @@ const NavBar = ({ doctorRef }) => {
   };
 
   return (
-    <nav className="fixed flex w-full h-20 items-center justify-between z-1000 transition-all duration-500">
-      <img src={Logo} alt="logo" className="w-[17%] pt-7" />
+    <nav
+      className={`fixed flex w-full h-20 items-center justify-between z-[1000] transition-all duration-500 
+        ${isScrolled
+          ? "backdrop-blur-md bg-white/30 shadow-md"
+          : "bg-transparent shadow-none"
+        }`}
+    >
+      {/* اللوغو */}
+      <img src={Logo} alt="logo" className="w-[17%] pt-7 transition-all duration-500" />
 
+      {/* القسم الأيمن */}
       <div
         className={`
-          clip-left-wave w-[80%] h-20 flex items-center justify-between
-          bg-[var(--persian-green)] shadow-md justify-self-end transition-all duration-700
-          ${language === "ar" ? "rounded-br-full  pr-20 pl-10" : "rounded-bl-full pl-20"}
+          clip-left-wave w-[80%] h-20 flex items-center justify-between 
+          bg-[var(--persian-green)] transition-all duration-700
+          ${language === "ar" ? "rounded-br-full pr-20 pl-10" : "rounded-bl-full pl-20"}
         `}
       >
         <ul
           className={`
             flex-1 flex items-center gap-10 text-white text-xl transition-all duration-500
-            ${language === "ar" ? "justify-start pl-20 pr-5 " : "justify-start pl-20"}
+            ${language === "ar" ? "justify-start pl-20 pr-5" : "justify-start pl-20"}
           `}
         >
           <li
-            className="hover:text-[var(--timberwolf)] hover:-translate-y-1 duration-300 font-medium 
-            cursor-pointer transition"
+            className="hover:text-[var(--timberwolf)] hover:-translate-y-1 duration-300 font-medium cursor-pointer transition"
             onClick={() => navigate("/")}
           >
             {language === "en" ? "Home" : "الرئيسية"}
           </li>
           <li
-            className="hover:text-[var(--timberwolf)] hover:-translate-y-1 duration-300 font-medium 
-            cursor-pointer transition"
+            className="hover:text-[var(--timberwolf)] hover:-translate-y-1 duration-300 font-medium cursor-pointer transition"
             onClick={scrollToDoctors}
           >
             {language === "en" ? "Doctors" : "الأطباء"}
@@ -138,7 +163,7 @@ const NavBar = ({ doctorRef }) => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
 export default NavBar

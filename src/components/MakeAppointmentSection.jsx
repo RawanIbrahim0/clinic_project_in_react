@@ -32,9 +32,8 @@ const MakeAppointmentSection = ({ doctor }) => {
 
   return (
     <section
-      className={`mt-12 mb-12 flex flex-col justify-center items-center gap-5 text-center ${
-        language === "ar" ? "rtl" : "ltr"
-      }`}
+      className={`mt-12 mb-12 flex flex-col justify-center items-center gap-5 text-center ${language === "ar" ? "rtl" : "ltr"
+        }`}
       dir={language === "ar" ? "rtl" : "ltr"}
     >
       <motion.h2
@@ -92,11 +91,10 @@ const MakeAppointmentSection = ({ doctor }) => {
               }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-4 py-2 rounded-lg font-medium border transition ${
-                selectedDate === slot.date
+              className={`px-4 py-2 rounded-lg font-medium border transition ${selectedDate === slot.date
                   ? "bg-[var(--caribbean-current)] text-white"
                   : "bg-white text-[var(--dark-green)] hover:bg-[var(--robin-egg-blue)] hover:text-white"
-              }`}
+                }`}
             >
               {slot.date}
             </motion.button>
@@ -125,11 +123,10 @@ const MakeAppointmentSection = ({ doctor }) => {
                     }}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`px-4 py-2 rounded-lg font-medium border transition ${
-                      selectedTime === time
+                    className={`px-4 py-2 rounded-lg font-medium border transition ${selectedTime === time
                         ? "bg-[var(--caribbean-current)] text-white"
                         : "bg-white text-[var(--dark-green)] hover:bg-[var(--robin-egg-blue)] hover:text-white"
-                    }`}
+                      }`}
                   >
                     {time}
                   </motion.button>
@@ -162,7 +159,8 @@ const MakeAppointmentSection = ({ doctor }) => {
           {showForm && (
             <motion.div
               key="form"
-              className="mt-6 w-full flex flex-col items-center gap-4 bg-white p-6 rounded-xl shadow-md"
+              className="mt-6 w-full flex flex-col items-center gap-4 bg-white p-6 
+              rounded-xl shadow-md "
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
@@ -197,8 +195,10 @@ const MakeAppointmentSection = ({ doctor }) => {
                 onChange={(e) =>
                   setUserInfo({ ...userInfo, phone: e.target.value })
                 }
-                className="border border-gray-300 rounded-lg px-4 py-2 w-[80%] focus:outline-none
-                 focus:ring-2 focus:ring-[var(--caribbean-current)]"
+                className={`border border-gray-300 rounded-lg px-4 py-2 w-[80%] focus:outline-none
+                   focus:ring-2 focus:ring-[var(--caribbean-current)] 
+                  ${language === "en" ? "text-start" : "text-end"}`}
+
               />
 
               <motion.button

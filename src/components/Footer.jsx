@@ -32,7 +32,7 @@ const Footer = () => {
           <div className="grid grid-cols-[1.3fr_1.3fr_1.3fr_1.3fr] gap-x-8 items-start w-full max-w-[1200px] px-4">
             {/* Harmoni / Healix section */}
             <div className={`col-span-1 ${language === "ar" ? "text-right" : "text-left"}`}>
-              <h4 className="text-2xl font-bold mb-3 text-[var(--dark-green)]">
+              <h4 className="text-2xl font-bold mb-3 text-[#03312eff]">
                 Healix
               </h4>
               <ul className="space-y-1">
@@ -51,7 +51,7 @@ const Footer = () => {
 
             {/* Access section */}
             <div className={`col-span-1 ${language === "ar" ? "text-right" : "text-left"}`}>
-              <h4 className="text-2xl font-bold mb-3 text-[var(--dark-green)]">
+              <h4 className="text-2xl font-bold mb-3 text-[#03312eff]">
                 {language === "en" ? "Access" : "الوصول"}
               </h4>
               <ul className="space-y-1">
@@ -70,7 +70,7 @@ const Footer = () => {
 
             {/* Contact section */}
             <div className={`col-span-1 ${language === "ar" ? "text-right" : "text-left"}`}>
-              <h4 className="text-2xl font-bold mb-3 text-[var(--dark-green)]">
+              <h4 className="text-2xl font-bold mb-3 text-[#03312eff]">
                 {language === "en" ? "Contact" : "تواصل"}
               </h4>
               <ul className="space-y-1">

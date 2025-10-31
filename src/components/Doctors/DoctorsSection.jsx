@@ -3,12 +3,14 @@ import { DataContext } from "../../context/DataContext"
 import DoctorCard from "./DoctorCard"
 import { useLanguage } from "../../context/LanguageContext"
 
-const DoctorsSection = () => {
+const DoctorsSection = ({ doctorRef }) => {
   const { doctors } = useContext(DataContext)
   const { language } = useLanguage()
 
   return (
-    <section className="mt-12 flex flex-col gap-5 py-12 text-center bg-[var(--mint-cream)]">
+    <section
+     ref={doctorRef}
+    className="mt-12 flex flex-col gap-5 py-12 text-center bg-[var(--mint-cream)]">
       <h2 className="text-3xl text-[var(--dark-green)] font-bold mb-2">
         {language === "en" ? "Our Specialists" : "أطباؤنا المتخصصون"}
       </h2>

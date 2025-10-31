@@ -36,14 +36,7 @@ const DoctorCard = ({ doctor }) => {
         />
       </div>
 
-      {/*    <img
-        src={doctor.photo}
-        alt={doctor.name}
-        className="w-[100%] h-[100%] rounded-full object-cover mb-3 border-6
-         border-gradient-to-r from-[var(--persian-green)] via-[var(--caribbean-current)]
-          to-[var(--robin-egg-blue)]"
-      /> */}
-      <h3 className="text-xl font-semibold text-gray-800">{doctor.name}</h3>
+      <h3 className="text-xl font-semibold text-[var(--dark-green)]">{doctor.name}</h3>
       <p className="text-[var(--caribbean-current)] text-lg font-bold">
         {doctor.specialty}
       </p>
